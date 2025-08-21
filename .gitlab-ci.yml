@@ -1,13 +1,10 @@
-stages:
- -build 
- -test
-
-build-job:
- stage:bulid
- script:
-  -echo"building the project..."
+stages: 
+  -test
 
 test-job:
- stage:test
+ stage:test 
  script:
-  -acho"running tests..."
+   -echo"installing Node.js"
+   -apt-get update && apt-get install -y nodejs npm
+   -npm install
+   -npm test
